@@ -26,14 +26,14 @@ public class Ex011 {
         // 정렬
         Arrays.sort(people);
 
-        // n과 count가 같아질 때 까지 반복
-        while (n>count) {
+        // n이 count보다 작아질 때 까지 반복
+        while (n>=count) {
             if (people[n]+people[count]<=limit) count++;
             n--;
             answer++;
         }
 
         // 리턴
-        return (n==count) ? answer+1 : answer;
+        return answer;
     }
 }
