@@ -8,23 +8,24 @@ public class _11286 {
         // 입력
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        PriorityQueue<Integer> plus = new PriorityQueue<>();
-        PriorityQueue<Integer> minus = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> pQ = new PriorityQueue<>((o1, o2) -> {
+            int num1 = Math.abs(o1);
+            int num2 = Math.abs(o2);
+            if (num1 == num2) {
+                return o1 > o2 ? 1 : -1;
+            }
+            return num1 - num2;
+        });
 
         for (int i=0; i<N; i++) {
             int num = Integer.parseInt(br.readLine());
-            if (num > 0) {
-                plus.add(num);
-            } else if (num < 0) {
-                minus.add(num);
+            if (num != 0) {
+                pQ.add(num);
             } else { // 0일 때 (출력)
-                if (!minus.isEmpty() && ((plus.isEmpty())
-                        || (plus.peek() + minus.peek() >= 0))) {
-                    System.out.println(minus.poll());
-                } else if (minus.isEmpty() && plus.isEmpty()){
-                    System.out.println(0);
+                if (!pQ.isEmpty()) {
+                    System.out.println(pQ.poll());
                 } else {
-                    System.out.println(plus.poll());
+                    System.out.println(0);
                 }
             }
         }
