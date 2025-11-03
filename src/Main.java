@@ -2,11 +2,22 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<int[]> list = new ArrayList<>();
-        int[] arr1 = new int[2];
-        int[] arr2 = new int[2];
-        list.add(arr1);
-        System.out.println(""+1+2);
+        int[] arr = {2,5,1,7,9,6,4,8,3};
+
+        for (int i=0; i<arr.length-1; i++) {
+            boolean check = true;
+            for (int j=0; j<arr.length-1-i; j++) {
+                if (arr[j]>arr[j+1]) {
+                    check = false;
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+            if (check) break;
+        }
+
+        System.out.println(Arrays.toString(arr));
     }
 }
 
