@@ -30,6 +30,7 @@ public class Ex053 {
         });
 
         // 리턴
+        if (arr[0].equals("0")) return "0";
         return String.join("",arr);
     }
 }
