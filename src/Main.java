@@ -2,22 +2,24 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {2,5,1,7,9,6,4,8,3};
+        String[][] arr = {
+                {"aa", "12", "C"},
+                {"aa", "1", "C"},
+                {"ab", "2", "c"}
+        };
 
-        for (int i=0; i<arr.length-1; i++) {
-            boolean check = true;
-            for (int j=0; j<arr.length-1-i; j++) {
-                if (arr[j]>arr[j+1]) {
-                    check = false;
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
+        Arrays.sort(arr, (o1, o2) -> {
+            String word1 = o1[0].toLowerCase();
+            String word2 = o2[0].toLowerCase();
+            if (word1.equals(word2)) {
+                int num1 = Integer.parseInt(o1[1]);
+                int num2 = Integer.parseInt(o2[1]);
+                return num1 > num2 ? 1 : -1;
             }
-            if (check) break;
-        }
+            return word1.compareTo(word2);
+        });
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.deepToString(arr));
     }
 }
 
