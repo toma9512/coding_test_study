@@ -20,6 +20,9 @@ public class Main {
         });
 
         System.out.println(Arrays.deepToString(arr));
+        System.out.println("".compareTo("2"));
     }
 }
+
+
 
