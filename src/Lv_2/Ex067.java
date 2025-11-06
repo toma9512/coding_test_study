@@ -49,10 +49,14 @@ public class Ex067 {
 
         for (int i=0; i<players.length; i++) {
             if (players[i]/m>server[i]) {
+                // 증설한 서버량
                 int num = players[i]/m - server[i];
                 answer += num;
+
                 for (int j=0; j<k; j++) {
+                    // 인덱스 범위 넘어가면 반복 종료
                     if (i+j == players.length) break;
+
                     server[i+j] += num;
                 }
             }
