@@ -44,3 +44,19 @@ public class Ex070 {
         return answer;
     }
 }
+
+// 다른 사람 풀이인데 간결해서 가져옴
+class Solution {
+    public String solution(int n) {
+        String[] num = {"4","1","2"};
+        StringBuilder sb = new StringBuilder();
+
+        while (n > 0) {
+            sb.append(num[n%3]);
+            n = (n-1)/3;
+        }
+
+        sb.reverse();
+        return sb.toString();
+    }
+}
