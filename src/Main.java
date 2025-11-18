@@ -5,6 +5,9 @@ public class Main {
         String[] arr = {"a","b"};
         System.out.println(Arrays.asList(arr).contains("c"));
         System.out.println("ABcAB".contains("ABC"));
+        System.out.println();
+        List<String> mine = List.of("diamond", "iron", "stone");
+        System.out.println(mine);
     }
 }
 

@@ -14,7 +14,7 @@ n은 15이하의 자연수 입니다.
 
 import java.util.*;
 
-public class Ex_082 {
+public class Ex082 {
     List<int[]> answer = new ArrayList<>();
 
     public int[][] solution(int n) {
