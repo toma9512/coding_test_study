@@ -41,7 +41,7 @@ public class Ex093 {
     void makeKey(int attr, int maxAttr, int size, String[][] relation, Set<Integer> keySet) {
         if (size == keySet.size()) {
             if (isUnique(relation, keySet)) {
-                for (Set<Integer> uniqueKey : candidateKey) {
+                for (Set<Integer> uniqueKey : candidateKey) { // 최소성 검사
                     if (keySet.containsAll(uniqueKey)) return;
                 }
                 candidateKey.add(keySet);
@@ -57,7 +57,7 @@ public class Ex093 {
         }
     }
 
-    boolean isUnique(String[][] relation, Set<Integer> keySet) {
+    boolean isUnique(String[][] relation, Set<Integer> keySet) { // 유일성 검사
         Set<String> saveKey = new HashSet<>();
 
         for (int i=0; i<relation.length; i++) {
