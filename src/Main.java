@@ -6,8 +6,14 @@ public class Main {
         System.out.println(Arrays.asList(arr).contains("c"));
         System.out.println("ABcAB".contains("ABC"));
         System.out.println();
-        List<String> mine = List.of("diamond", "iron", "stone");
+        List<String> mine = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
         System.out.println(mine);
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println(list);
     }
 }
 
