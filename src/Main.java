@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] arr = {"a","b"};
+        String s = "1.-4";
+        String[] arr = s.split(".");
     }
 }
 
