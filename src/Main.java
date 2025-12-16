@@ -14,6 +14,17 @@ public class Main {
         System.out.println(mine);
         Collections.sort(list, Collections.reverseOrder());
         System.out.println(list);
+
+        int[][] arr1 = new int[3][];
+
+        arr1[0] = new int[] {1,2, 3};
+        arr1[2] = new int[] {1};
+
+        System.out.println(Arrays.deepToString(arr1));
+
+        List<Integer> list1 = new ArrayList<>();
+
+        int[] arr3 = list1.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 
