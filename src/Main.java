@@ -7,9 +7,6 @@ public class Main {
         pq.add(1);
         pq.add(4);
         System.out.println(pq);
-        System.out.println(pq);
-
-
     }
 }
 
